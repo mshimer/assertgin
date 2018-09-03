@@ -1,12 +1,12 @@
-#Assert Gin : A Java Assertion Generator
+# Assert Gin : A Java Assertion Generator
 
 Generates code to assert an object's current runtime state
 
-##Writing assertion code is boring...
+## Writing assertion code is boring...
 
-##Wouldn't it be cool if you could just generate them?
+## Wouldn't it be cool if you could just generate them?
 
-##YES !
+## YES !
 
 AssertGin allows Java developers to generate assertion code for runtime 
 objects by adding one line of code to their test.
@@ -15,7 +15,7 @@ The generated assertions will be written to the IDE console or stdout.
 
 Then you just paste them into your code..  Boom!
 
-#Example - list of bytes
+# Example - list of bytes
 Example : 
 
 **Let's say I'm writing a test..**
@@ -67,7 +67,7 @@ Example :
 	}    
 
 
-##Workflow
+## Workflow
 
 1. Write your test
 1. Add this line for the object you want to generate assertions for:
@@ -84,7 +84,7 @@ Of course it's your job to make sure the runtime state of your object is
 correct per your application.  AssertGin cannot figure that out..
 
 
-##Collections
+## Collections
         
 **That's great but what if I use an Array, Set, or Map ?**
 
@@ -165,7 +165,7 @@ correct per your application.  AssertGin cannot figure that out..
    - Map
    
    
-##Java Beans   
+## Java Beans   
 **What about java beans?**
 
 Let's say we have a bean : 
@@ -205,7 +205,7 @@ And re run our test and look at the console :
 **Then we simple paste the code into the test to add the assertions!**
        
        
-##Complex Types       
+## Complex Types       
 
 **what if the runtime object I want to generate assertions for is YUGE?**
 
@@ -416,7 +416,7 @@ Sample output for a complex test case :
     assertThat(b2.getBigDecimal(), is(new BigDecimal("1.33333333333333333")));
 
       
-##Custom Types
+## Custom Types
 
 What if my company has a type that's not included in your code - like a Money type:
 
@@ -461,7 +461,7 @@ To add your custom types :
 
 
 
-##Misc
+## Misc
 
 - [add Code overview]
 
