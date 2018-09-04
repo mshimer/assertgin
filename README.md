@@ -216,8 +216,8 @@ Can you imagine trying to figure out and write all these assertions?
 
 It could take an hour..
 
-Not it takes a single test run to generate toe output 
-and another to paste it back into the test and run it again
+Not it takes a single test run to generate the output 
+and another to run it with the pasted assertion code 
 
 Sample output for a complex test case : 
 
@@ -419,11 +419,13 @@ Sample output for a complex test case :
       
 ## Custom Types
 
-What if my company has a type that's not included in your code - like a Money type:
+What if my company has a type that's not included in your code.
 
 How easy is it to add custom types ? 
 
-Like Joda Time DateTime for example : 
+Like Joda Time DateTime for example.  Testing date types can be a pain.
+
+Here we format the date and compare the formatted result with what we expect it to be.
 
 And add types in the overridden constructor like so : 
 
@@ -449,7 +451,9 @@ The generate assertion for your custom type will follow the pattern :
 
 ```assertThat(/* result from renderExpected */ exp, is( /* result from renderObserved */ obs) )```
 	
-
+The dateTimeType will generate assertions that look like : 	
+	
+```assertThat(dateTime.toString(DateTimeFormat.forPattern("MM-dd-yyyy")), is("06-09-2018")));```
 
 To add your custom types : 
 
