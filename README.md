@@ -31,8 +31,6 @@ Example :
  
  
 **Now you can generate them with one line of code :** 
-
-("Ok.. the import.. 2 lines of code)
  
     // import static assertgin.AssertGin.assertIt;
     
@@ -254,6 +252,7 @@ Sample output for a complex test case :
     List l = (List) map.get("l");
     
     assertThat(l.size(), is(1));
+   
     BigBean bigBean = (BigBean) l.get(0);
     assertThat(bigBean.getAbyte(), is((byte) 4));
     assertThat(bigBean.getAshort(), is((short)5));
@@ -264,6 +263,7 @@ Sample output for a complex test case :
     assertThat(bigBean.getAchar(), is('c'));
     assertThat(bigBean.isAboolean(), is(true));
     assertThat(bigBean.getAstring(), is("nested"));
+    
     BigBean bigBean0 = bigBean.getBigBean();
     assertThat(bigBean0.getAbyte(), is((byte) 1));
     assertThat(bigBean0.getAshort(), is((short)2));
@@ -339,6 +339,7 @@ Sample output for a complex test case :
     assertThat(bigBean1.getAchar(), is('c'));
     assertThat(bigBean1.isAboolean(), is(true));
     assertThat(bigBean1.getAstring(), is("nested"));
+  
     BigBean bigBean2 = bigBean1.getBigBean();
     assertThat(bigBean2.getAbyte(), is((byte) 1));
     assertThat(bigBean2.getAshort(), is((short)2));
@@ -444,8 +445,6 @@ And add types in the overridden constructor like so :
     };
     
      
-
-  
 The generate assertion for your custom type will follow the pattern : 
 
 ```assertThat(/* result from renderExpected */ exp, is( /* result from renderObserved */ obs) )```

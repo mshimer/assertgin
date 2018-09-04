@@ -11,30 +11,13 @@ import static org.apache.commons.lang3.StringUtils.uncapitalize;
 /*
 
 
-TODO README.md
-
-TODO format and look over code
-
-TODO check into github!
-
-
-
---
-
 TODO context : bean properties vs getters
 
-TODO when casting down cast to List, Map, Set instead of impl.. ? check parent class..
-
 TODO templates (pluggable assertion leafTypes java or hamcrest or junit...)
-
-TODO - idea : wrap set items in a comparable?  compare concatenating all fields in order as a string?
-
-TODO - idea : could loop through set items and try different set of assertinos on each item - until we match them all - a way to get around order!!
 
 TODO generics
 
 TODO @AssertGinIgnore for fields
-
 
 
  */
@@ -56,6 +39,7 @@ public class AssertGin {
 
 
     public static String assertIt(Object in, String name) {
+
         AssertGin gin = new AssertGin();
         AssertGinContext context = new AssertGinContext(name);
         gin.assertObject(in, name, context);
@@ -72,6 +56,7 @@ public class AssertGin {
 
 
     public static String assertIt(Object in, String name, List<LeafType> customTypes) {
+
         AssertGin gin = new AssertGin(customTypes);
         AssertGinContext context = new AssertGinContext(name);
         gin.assertObject(in, name, context);
