@@ -8,8 +8,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-
-import static org.apache.commons.lang3.StringUtils.capitalize;
+import static assertgin.StringUtil.capitalize;
 
 
 public class Prop {
@@ -42,6 +41,7 @@ public class Prop {
 
 
 	/** returns setter Method or null */
+	@SuppressWarnings("unchecked")
 	private Method hasSetter(Object in, String name, Class type) {
 		Method method = null;
 		Class clazz = in.getClass();
@@ -60,6 +60,7 @@ public class Prop {
 	}
 
 	/** returns getter method or null */
+	@SuppressWarnings("unchecked")
 	private Method hasGetter(Object in, String name) {
 		Method method = null;
 		Class clazz = in.getClass();

@@ -7,7 +7,7 @@ public class AssertGinContext {
 
     private boolean ignoreNulls;
     private StringBuilder buffer = new StringBuilder();
-    private Set vars = new HashSet();
+    private Set<String> vars = new HashSet<>();
 
     public AssertGinContext(String name){
         vars.add(name); // register the top leve object's name in our variable env

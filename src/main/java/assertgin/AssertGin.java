@@ -5,7 +5,8 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 import static assertgin.Prop.getProps;
-import static org.apache.commons.lang3.StringUtils.uncapitalize;
+import static assertgin.StringUtil.uncapitalize;
+
 
 
 /*
@@ -145,6 +146,7 @@ public class AssertGin {
     }
 
 
+    @SuppressWarnings("unchecked")
     private void assertSet(String name, Set set, AssertGinContext context) {
 
         if (set.isEmpty()) {
@@ -160,8 +162,7 @@ public class AssertGin {
             context.append(name + "AsList.addAll(" + name + ");\n" +
                     "Collections.sort(" + name + "AsList);\n" +
                     "assertThat(" + name + "AsList.size(), is(" + set.size() + "));\n");
-            List list = new ArrayList();
-            list.addAll(set);
+            List list = new ArrayList(set);
             Collections.sort(list);
             assertListItems(list, name + "AsList", context);
         }
@@ -171,8 +172,8 @@ public class AssertGin {
             context.append("// TODO : uses a non-deterministic iterator - you should make the elements in the Set Comparable.\n" +
                     "Iterator " + name + "It = " + name + ".iterator();\n");
 
-
-            // uses a non determinate order.. you should implement Comparable.. caveot emptor
+            // WARNING : uses a non determinate order.. you should implement Comparable.. caveot emptor
+            
             int i = 0;
             while (it.hasNext()) {
 

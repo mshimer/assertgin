@@ -154,7 +154,7 @@ correct per your application.  AssertGin cannot figure that out..
    - String
    - Date
    - BigDecimal
-   - <you easily can add your own custom type .. (scroll down)
+   - ...you easily can add your own custom type .. (scroll down)
 
 **With collection types :**
    - Array
@@ -189,7 +189,7 @@ Let's say we have a bean :
 
 And it's runtime state is
 
-    SmallBean bean = new SmallBean(1, "awesome);
+    SmallBean bean = new SmallBean(1, "awesome");
     
 And we add the following line to our test case 
 
@@ -449,7 +449,7 @@ And add types in the overridden constructor like so :
      
 The generate assertion for your custom type will follow the pattern : 
 
-```assertThat(/* result from renderExpected */ exp, is( /* result from renderObserved */ obs) )```
+```assertThat(/* result from renderExpected */ exp, is( /* result from renderObserved */ obs) );```
 	
 The dateTimeType will generate assertions that look like : 	
 	
@@ -462,7 +462,20 @@ To add your custom types :
     ...
     System.out.println( assertIt(in, name, companyTypes) );
 
+## Building / Packaging
 
+### Make a jar
+    cd assertgin
+    ./gradlew clean jar
+    ls -l build/libs/assertgen.jar
+    
+    # then you can add to your test class path
+
+### Run the internal tests
+    # for the curious, or if you want to modify the code
+    # and make sure everything still works
+    
+    ./gradlew test
 
 ## Misc
 
@@ -482,6 +495,7 @@ Someone could IntelliJ Debugger plug in using this:
 Right click for context menu on a variable
 
 Click 'Generate AssertGin Assertions' 
+
 
 
 [eof]
